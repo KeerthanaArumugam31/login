@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Registration Form | CodingLab</title> -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Registration Form</span></div>
+        <form action="registration" method="post">
+          {% csrf_token %}
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Name" name="name" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" name="email" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-phone"></i>
+            <input type="tel" placeholder="Phone number" name="mobile" required>
+          </div>
+
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" name="password" required>
+          </div>
+          <div class="row button">
+            <input type="submit" value="Register">
+          </div>
+          <div class="signup-link">Already registered? <a href="http://127.0.0.1:8000/">Login here</a></div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>
